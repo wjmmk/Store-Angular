@@ -20,8 +20,12 @@ export class ProductosService {
          this.productoIdx = resp;
          setTimeout(() => {
           this.carga = false;
-         }, 2000);
+         }, 1000);
          console.log(resp);
       });
+  }
+
+  getProducto(id: string) {
+    return this.http.get(`https://angular-web-84077.firebaseio.com/productos/${id}.json`);
   }
 }
