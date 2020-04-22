@@ -17,7 +17,7 @@ export class ProductosService {
 
   private cargarProductos() {
 
-    return new Promise( (respuesta, rechazo) => {
+    return new Promise( (respuesta) => {
 
       this.http.get('https://angular-web-84077.firebaseio.com/productos_idx.json')
       .subscribe( (resp: ItemProductos[]) => {
@@ -49,12 +49,11 @@ export class ProductosService {
   }
 
   private filtralProductos(termino: string) {
-    console.log(this.productoIdx);
+     // console.log(this.productoIdx);
     this.productoFiltrado = []; // Se purga el arreglo para que no muestre los productos repetidos
-    // Se filtran los productos del Array productoIdx y se empujan al array productoFiltrado
 
-    // tslint:disable-next-line: max-line-length
-    termino = termino.toLocaleLowerCase(); // Coloca en minuscula el valor que venga en la variable termino para hacer una busqueda mas exacta.
+    termino = termino.toLocaleLowerCase(); // Coloca en minuscula el valor que venga en la variable
+                                          // (termino) para hacer una busqueda mas exacta.
 
     this.productoIdx.forEach( prodFil => {
       const tituloLower = prodFil.titulo.toLocaleLowerCase();
