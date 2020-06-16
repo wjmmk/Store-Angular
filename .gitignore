@@ -12,7 +12,8 @@
 /node_modules
 
 # /.gitignore
-src/assets/data/
+src/assets/data/data-firebase.json
+src/assets/data/data-pagina.json
 
 # profiling files
 chrome-profiler-events*.json
